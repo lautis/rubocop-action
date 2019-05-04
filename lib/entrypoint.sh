@@ -2,6 +2,4 @@
 
 set -e
 
-gem install rubocop
-
-ruby /action/lib/index.rb
+bundle exec ruby /action/lib/index.rb
