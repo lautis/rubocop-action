@@ -8,4 +8,5 @@ LABEL com.github.actions.color="red"
 LABEL maintainer="Alberto Gimeno <gimenete@gmail.com>"
 
 COPY lib /action/lib
+RUN gem install bundler
 ENTRYPOINT ["/action/lib/entrypoint.sh"]
