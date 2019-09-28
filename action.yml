@@ -11,3 +11,6 @@ inputs:
   gemfile:
     description: "Gemfile path"
     required: false
+  results:
+    description: "Path to Rubocop results JSON"
+    required: false

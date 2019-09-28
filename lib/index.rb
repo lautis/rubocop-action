@@ -72,12 +72,19 @@ end
   "fatal" => 'failure'
 }
 
+def rubocop_output
+  if ENV['INPUT_RESULTS'].to_s.empty?
+    Dir.chdir(@GITHUB_WORKSPACE) do
+      `rubocop --format json`
+    end
+  else
+    File.read(ENV['INPUT_RESULTS'])
+  end
+end
+
 def run_rubocop
   annotations = []
-  errors = nil
-  Dir.chdir(@GITHUB_WORKSPACE) {
-    errors = JSON.parse(`rubocop --format json`)
-  }
+  errors = JSON.parse(rubocop_output)
   conclusion = "success"
   count = 0
 

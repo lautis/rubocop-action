@@ -10,7 +10,7 @@ COMMAND="ruby"
 if [ ! -z ${BUNDLE_GEMFILE} ] || [ -f Gemfile ]; then
   COMMAND="bundle exec ruby"
   bundle install
-else
+elif [ -z "$INPUT_RESULTS" ]; then
   gem install rubocop
 fi
 

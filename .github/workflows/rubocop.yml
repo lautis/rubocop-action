@@ -18,3 +18,13 @@ jobs:
           gemfile: "test/Gemfile"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-ruby@v1
+      - run: |
+          gem install rubocop
+          rubocop -f json > rubocop.json
+      - uses: "./"
+        name: "With Results from previous step"
+        with:
+          results: "rubocop.json"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
