@@ -7,3 +7,7 @@ branding:
 runs:
   using: "docker"
   image: "Dockerfile"
+inputs:
+  gemfile:
+    description: "Gemfile path"
+    required: false

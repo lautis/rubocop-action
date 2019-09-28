@@ -2,8 +2,12 @@
 
 set -e
 
+if [ ! -z ${INPUT_GEMFILE+x} ]; then
+  export BUNDLE_GEMFILE=$INPUT_GEMFILE
+fi
+
 COMMAND="ruby"
-if [ -f Gemfile ]; then
+if [ ! -z ${BUNDLE_GEMFILE} ] || [ -f Gemfile ]; then
   COMMAND="bundle exec ruby"
   bundle install
 else
