@@ -2,6 +2,12 @@
 
 set -e
 
-bundle install
+COMMAND="ruby"
+if [ -f Gemfile ]; then
+  COMMAND="bundle exec ruby"
+  bundle install
+else
+  gem install rubocop
+fi
 
-bundle exec ruby /action/lib/index.rb
+$COMMAND /action/lib/index.rb
