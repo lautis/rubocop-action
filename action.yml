@@ -1,0 +1,9 @@
+name: "Rubocop"
+description: "Lint your Ruby code in parallel to your builds"
+author: "lautis"
+branding:
+  icon: "code"
+  color: "red"
+runs:
+  using: "docker"
+  image: "Dockerfile"
