@@ -10,7 +10,7 @@ Add the following step to your GitHub actions workflow:
 
 ```yaml
 - name: Rubocop Linter
-  uses: lautis/rubocop-action@v2.0.1
+  uses: lautis/rubocop-action@v2.0.2
   env:
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -19,7 +19,7 @@ If you want to use JSON produced by Rubocop as input, give the path to the file 
 
 ```yaml
 - run: rubocop -f json > rubocop.json || true
-- uses: lautis/rubocop-action@v2.0.1
+- uses: lautis/rubocop-action@v2.0.2
   with:
     results: "rubocop.json"
   env:
