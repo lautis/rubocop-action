@@ -21,7 +21,7 @@ jobs:
       - uses: actions/setup-ruby@v1
       - run: |
           gem install rubocop
-          rubocop -f json > rubocop.json
+          rubocop -f json > rubocop.json || true
       - uses: "./"
         name: "With Results from previous step"
         with:
