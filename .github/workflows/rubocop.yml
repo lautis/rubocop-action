@@ -28,3 +28,9 @@ jobs:
           results: "rubocop.json"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: "./"
+        name: "With failed checks"
+        with:
+          results: "test/results.json"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
