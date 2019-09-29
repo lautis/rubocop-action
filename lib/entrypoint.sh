@@ -7,10 +7,12 @@ if [ ! -z ${INPUT_GEMFILE+x} ]; then
 fi
 
 COMMAND="ruby"
-if [ ! -z ${BUNDLE_GEMFILE} ] || [ -f Gemfile ]; then
+if [ ! -z "$INPUT_RESULTS" ]; then
+  : # Do nothing
+elif [ ! -z ${BUNDLE_GEMFILE} ] || [ -f Gemfile ]; then
   COMMAND="bundle exec ruby"
   bundle install
-elif [ -z "$INPUT_RESULTS" ]; then
+else
   gem install rubocop
 fi
 
