@@ -1,5 +1,7 @@
 # Rubocop Action
 
+**Deprecated: rubocop 1.2.0 supports annotation with `rubocop --format github`**
+
 Lint your Ruby code in GitHub Actions. Can use bundled Rubocop and custom gems or even JSON results as input.
 
 ![](screenshots/annotations.png)
